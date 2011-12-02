@@ -31,7 +31,5 @@ sort = extend(sort, {
 });
 
 //Test
-var init_collection = [9,0,6,2,1,3,5,14,11,2,5,70,11,23,11,0];
-print(init_collection);
 print(sort.insertionSort(init_collection));
 

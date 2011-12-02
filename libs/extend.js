@@ -1,6 +1,8 @@
 ﻿
-//Creates a new object from props that will inherit from target
-//Similar to Object.create
+//Creates a new object that inherits from 'target' and adds properties
+//from 'prop'. 
+//Similar to native JS Object.create
+//http://javascript.crockford.com/prototypal.html
 function extend (target,props) {
 
 	//Add members from props to function
