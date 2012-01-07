@@ -48,10 +48,10 @@ sort = extend(sort, {
 					last = left_index,
 					i;
 
-			//Move pivot element to leftmost 
+			//Move pivot element to leftmost. Pivot is middle element
 			swap(a,left_index,Math.floor((left_index + right_index)/2)); 
 
-			//Note: pivot is unsorted_array[left_index])
+			//Note: pivot is now unsorted_array[left_index])
 
 			for (i = left_index + 1; i <= right_index; i++) {
 				if (a[left_index] > a[i])
