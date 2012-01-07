@@ -34,3 +34,9 @@ sort = extend(sort, {
 
 //Test
 print(sort.selectionSort(init_collection));
+
+//See:
+//Cormen, Leiserson, Rivest, Stein. Introduction to Algorithms (2nd ed.)
+//Exercise 2.2-2, pp.29
+
+//Wikipedia article: http://en.wikipedia.org/wiki/Selection_sort

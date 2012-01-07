@@ -31,6 +31,6 @@ sort = extend(sort, {
 		return collection;
 	} //end sort
 });
-
 //Test
 print(sort.gnomeSort(init_collection));
+//TODO Add optmisation found on wikipedia
