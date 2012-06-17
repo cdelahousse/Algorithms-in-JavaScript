@@ -67,5 +67,7 @@ sort = extend(sort, {
 });
 
 //Test
-print(sort.quickSortArray(init_collection));
-print(sort.quickSortKandR(init_collection));
+console.log("Quicksort Array:");
+console.log(sort.quickSortArray(init_collection));
+console.log("QuicksortK&R:");
+console.log(sort.quickSortKandR(init_collection));

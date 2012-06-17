@@ -32,4 +32,3 @@ sort = extend(sort, {
 
 //Test
 print(sort.insertionSort(init_collection));
-

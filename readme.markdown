@@ -1,12 +1,12 @@
 Buncha sorting algorithms implemented in Javascript
 Fo' fun...
 
-Everything is stored in the `sort` variable;
+Everything is stored in the `sort` object;
 
 ###USAGE:###
 
-	sort.*sortType*(collection);
+	JS>sort.*sortType*(collection);
 
 ###EXAMPLE:###
 
-	sort.insertionSort([6,7,3,4,9,1]);
+	JS>sort.insertionSort([6,7,3,4,9,1]);
