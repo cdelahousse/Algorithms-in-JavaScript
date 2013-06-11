@@ -1,5 +1,6 @@
 /** @fileOverview Helpers for testing */
 
+var _ = require('underscore');
 /**
  * Simple testing function
  * @returns {function}
@@ -15,9 +16,9 @@ module.exports.assert = (function() {
     * @returns {boolean}
     */
   return function (a1, a2) {
-    return a1 === a2 ? 
+    return _.isEqual(a1, a2) ? 
       (console.log( ++counter + ") PASS"), true) :
-      (console.log( ++counter + ") FAIL: " + a1 + ", answer: " + a2), false);
+      (console.log( ++counter + ") FAIL: " + a1 + ", expected: " + a2), false);
   };
 })();
 
