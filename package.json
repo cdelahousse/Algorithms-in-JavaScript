@@ -12,8 +12,11 @@
   },
   "author": "Christian Delahousse",
   "readmeFilename": "README.md",
-  // "gitHead": "6f647692af6c03345dcd190217218c12e1c2bd18",
   "bugs": {
     "url": "https://github.com/cdelahousse/Algorithms-in-JavaScript/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-jsdoc": "~0.3.3"
   }
 }
