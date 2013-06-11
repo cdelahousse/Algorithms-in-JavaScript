@@ -81,5 +81,6 @@ function Queue() {
 	
 }
 
-if (module) module.exports = Queue; 
+/** Export to global scope */
+if (module && module.exports) module.exports = fastExp; 
 
