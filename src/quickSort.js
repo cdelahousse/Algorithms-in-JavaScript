@@ -30,44 +30,58 @@ function quickSortArray(unsorted_array) {
   return quickSortArray(left).concat(unsorted_array[0],quickSortArray(right));
 }
 
-//Quicksort as implemented by K&R in 'The C Programming Language' pg. 87
-//No new array creation
-function quickSortKandR(unsorted_array) {
+/**
+ * In place Quicksort as implemented by K&R in 'The C Programming Language'
+ * on pg. 87
+ */
+function quickSortInPlaceRecursive(unsorted_array) {
 
-  //Copy array, not the reference
-  var newarray = unsorted_array.slice();
+  //Recursive function
+  function qs (a, left_index, right_index) { 
+    /** Base case. Subset has 1 or less elements. */
+    if (left_index >= right_index) return; 
 
-  qsKR(newarray,0,newarray.length);
-  return newarray;
+    /** Pivot element Location */
+    var pivot = Math.floor((left_index + right_index)/2);
 
-  function qsKR (a, left_index, right_index) { 
-    if (left_index >= right_index) 
-      return; //Subset has 1 or less elements. Stop sorting
+    /** Move pivot element to leftmost location */
+    swap(a, left_index, pivot); 
 
-    var len =a.length,
-        last = left_index,
-        i;
+    /** Index of leftmost element larger than pivot element */
+    var leftMostLarger = left_index;
 
-    //Move pivot element to leftmost. Pivot is middle element
-    swap(a,left_index,Math.floor((left_index + right_index)/2)); 
+    /** Partition array */
+    for (var i = left_index + 1; i <= right_index; i++) {
 
-    //Note: pivot is now unsorted_array[left_index])
-
-    for (i = left_index + 1; i <= right_index; i++) {
-      if (a[left_index] > a[i])
-        swap(a,i,++last);
+      /** 
+       * When current elem is smaller than pivot elem, swap it with rightmost
+       * larger elem so that the current elem moves left to be the rightmost
+       * smaller elem. 
+       */
+      if (a[left_index] > a[i]) {
+        leftMostLarger = ++leftMostLarger;
+        swap(a,i,leftMostLarger);
+      }
     }
-    swap(a,left_index,last); //Move pivot into order
 
-    qsKR(a,left_index,last-1); //recur on lower/left partition
-    qsKR(a,last+1,right_index); //recur on higher/right partion
+    /** Swap pivot elem with leftmost larger elem */
+    swap(a,left_index,leftMostLarger); 
 
+    /** Recur on separate partitions */
+    qs(a,left_index,leftMostLarger-1); 
+    qs(a,leftMostLarger+1,right_index); 
   }
+
+  /** Copy array, not the reference */
+  var newarray = unsorted_array.slice(0);
+
+  /** Start Recuring on the entire array */
+  qs(newarray,0,newarray.length);
+  return newarray;
 }
 
 /** Export to global scope */
 if (module && module.exports) { 
   module.exports.quickSortArray = quickSortArray; 
-  module.exports.quickSortKandR = quickSortKandR; 
+  module.exports.quickSortInPlaceRecursive = quickSortInPlaceRecursive;
 }
-
