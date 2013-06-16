@@ -13,12 +13,15 @@ function selectionSort(collection) {
 
   var len = collection.length,
       i,j,key;
-  for (i = 0; i < len; i++) {
-    key = i; //Left most unsorted item
 
+  for (i = 0; i < len; i++) {
+    /** Left most unsorted item */
+    key = i;
+
+    /** Find smallest in unsorted portion */
     for (j = i + 1; j < len; j++) {
       if (collection[key] > collection[j]) {
-        key = j; //Smallest of compared items
+        key = j; 
       }
     } 
 
@@ -28,3 +31,4 @@ function selectionSort(collection) {
 }
 
 if (module && module.exports) module.exports = selectionSort;
+
