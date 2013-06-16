@@ -23,7 +23,16 @@ module.exports.assert = (function() {
 })();
 
 /** Unsorted collection, mock data */
-module.exports.unsorted_collection = function unsorted_collection () {
+var unsorted_collection =
+    module.exports.unsorted_collection =
+    function unsorted_collection () {
 	return [11,9,0,6,2,1,3,5,0,5,30,14,11,2,5,70,11,23,11,0]; //Unsorted
+};
+
+/** Sorted version of that unsorted collection */
+module.exports.sortedCollection = function() {
+  return unsorted_collection().sort(function (a,b) {
+    return a-b;
+  });
 };
 
