@@ -1,6 +1,10 @@
 var swap = require('./lib.js').swap;
 
-//Quicksort using new arrays
+/** 
+ * Quicksort using new arrays for the partion step
+ * @params {array} unsorted_array
+ * @returns new sorted array
+ */
 function quickSortArray(unsorted_array) {
   var len = unsorted_array.length;
 
@@ -32,11 +36,12 @@ function quickSortArray(unsorted_array) {
 
 /**
  * In place Quicksort as implemented by K&R in 'The C Programming Language'
- * on pg. 87
+ * on pg. 87. Pass in a reference to an array and it will be sorted.
+ * @param {array} unsorted_array
  */
 function quickSortInPlaceRecursive(unsorted_array) {
 
-  //Recursive function
+  /** Recursive function */
   function qs (a, left_index, right_index) { 
     /** Base case. Subset has 1 or less elements. */
     if (left_index >= right_index) return; 
@@ -72,12 +77,8 @@ function quickSortInPlaceRecursive(unsorted_array) {
     qs(a,leftMostLarger+1,right_index); 
   }
 
-  /** Copy array, not the reference */
-  var newarray = unsorted_array.slice(0);
-
   /** Start Recuring on the entire array */
-  qs(newarray,0,newarray.length);
-  return newarray;
+  qs(unsorted_array, 0, unsorted_array.length - 1);
 }
 
 /** Export to global scope */

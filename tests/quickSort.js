@@ -13,5 +13,6 @@ function num (a,b) {
 assert(quickSortArray(unsorted_collection()),
       unsorted_collection().sort(num));
 
-assert(quickSortInPlaceRecursive(unsorted_collection()),
-      unsorted_collection().sort(num));
+var a = unsorted_collection();
+quickSortInPlaceRecursive(a);
+assert(a, unsorted_collection().sort(num));
