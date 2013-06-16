@@ -9,6 +9,8 @@ A few algorithms implemented in Javascript.
 * [Quick Sort](http://en.wikipedia.org/wiki/Quicksort)
 
 *	[Selection Sort](http://en.wikipedia.org/wiki/Selection_sort)
+  Cormen, Leiserson, Rivest, Stein. Introduction to Algorithms (2nd ed.)
+  Exercise 2.2-2, pp.29
 
 ### String Matching
 
