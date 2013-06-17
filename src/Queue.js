@@ -1,9 +1,8 @@
-/***************************************************************************
+/**
  * Implementing something similar to the Java Queue interface
  * See Open Data Structures
  * http://opendatastructures.org/ods-java/2_3_ArrayQueue_Array_Based_.html
- **************************************************************************/
-
+ */
 function Queue() {
 	var a = [],
 			n = 0,
@@ -14,8 +13,9 @@ function Queue() {
 				k;
 
 		for (k = 0; k < n; k++) {
-			b[k] = a[ (j + n) % a.length ];
+			b[k] = a[ (j + k) % a.length ];
 		}
+
 		a = b;
 		j = 0;
 	}
@@ -33,7 +33,7 @@ function Queue() {
 	};
 
 	this.add = function(x) {
-		if (n + 1 === a.length) resize();
+		if (n + 1 > a.length) resize();
 
 		// Modulo of 0 is NaN
 		if (a.length === 0) {
@@ -69,18 +69,7 @@ function Queue() {
 	this.poll = function() {
 		return n === 0 ? null : this.remove();
 	};
-
-	this.size = function() {
-		return n;
-	};
-
-	this.peek = function() {
-		if (n === 0) return false;
-		return a[n-1];
-	};
-	
 }
 
-/** Export to global scope */
-if (module && module.exports) module.exports = fastExp; 
+if (module && module.exports) module.exports = Queue;
 
