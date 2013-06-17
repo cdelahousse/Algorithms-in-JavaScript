@@ -8,17 +8,16 @@ var _ = require('underscore');
 module.exports.assert = (function() {
   var counter = 0;
 
-
    /** 
     * Test to see if the first argument matches the value of the second.
-    * @param a1 The computed value
-    * @param a2 The expected value
+    * @param computed The computed value
+    * @param expected The expected value
     * @returns {boolean}
     */
-  return function (a1, a2) {
-    return _.isEqual(a1, a2) ? 
+  return function (computed, expected) {
+    return _.isEqual(computed, expected) ? 
       (console.log( ++counter + ") PASS"), true) :
-      (console.log( ++counter + ") FAIL: " + a1 + ", expected: " + a2), false);
+      (console.log( ++counter + ") FAIL: " + computed + ", expected: " + expected), false);
   };
 })();
 
