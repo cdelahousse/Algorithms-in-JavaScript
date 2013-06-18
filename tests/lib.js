@@ -1,11 +1,15 @@
 /** @fileOverview Helpers for testing */
 
 var _ = require('underscore');
+
+/** @namespace */
+var lib = {};
+
 /**
  * Simple testing function
  * @returns {function}
  */
-module.exports.assert = (function() {
+lib.assert = (function() {
   var counter = 0;
 
    /** 
@@ -23,15 +27,35 @@ module.exports.assert = (function() {
 
 /** Unsorted collection, mock data */
 var unsorted_collection =
-    module.exports.unsorted_collection =
+    lib.unsorted_collection =
     function unsorted_collection () {
 	return [11,9,0,6,2,1,3,5,0,5,30,14,11,2,5,70,11,23,11,0]; //Unsorted
 };
 
 /** Sorted version of that unsorted collection */
-module.exports.sortedCollection = function() {
+lib.sortedCollection = function() {
   return unsorted_collection().sort(function (a,b) {
     return a-b;
   });
 };
+
+/**
+ * Generate an array of random numbers
+ * @param {integer} n The number of numbers to generate
+ * @param {integer} m The upper bound on the numbers
+ * @returns {array}
+ */
+lib.generateRandomNumbers = function (n,m) {
+  var max = m || 100;
+  var number = n || 1000;
+  var a = [];
+
+  for (var i = 0; i < number; i++) {
+    a[i] = Math.floor( Math.random() * max );
+  }
+  return a;
+};
+
+/** Expose */
+module.exports = lib;
 
