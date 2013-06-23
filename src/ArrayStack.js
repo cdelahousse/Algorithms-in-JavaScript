@@ -1,11 +1,12 @@
 /** 
  * A stack data structure with an API similar to the Java Stack interface
+ * implemented using a backing array.
  * See Open Data Structures
  * http://opendatastructures.org/ods-java/2_3_ArrayQueue_Array_Based_.html
  *
  * @constructor
  */
-function Stack() {
+function ArrayStack() {
 	var a = [],
 			n = 0;
 
@@ -49,4 +50,4 @@ function Stack() {
 }
 
 /** Export to global scope */
-if (exports in module) module.exports = Stack; 
+if (exports in module) module.exports = ArrayStack; 

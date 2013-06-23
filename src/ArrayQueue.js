@@ -1,9 +1,9 @@
 /**
- * Implementing something similar to the Java Queue interface
+ * Implementing something similar to the Java Queue interface using an array.
  * See Open Data Structures
  * http://opendatastructures.org/ods-java/2_3_ArrayQueue_Array_Based_.html
  */
-function Queue() {
+function ArrayQueue() {
 	var a = [],
 			n = 0,
 			j = 0;
@@ -71,5 +71,5 @@ function Queue() {
 	};
 }
 
-if (module && module.exports) module.exports = Queue;
+if (module && module.exports) module.exports = ArrayQueue;
 

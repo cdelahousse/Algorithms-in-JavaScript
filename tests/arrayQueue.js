@@ -1,5 +1,5 @@
 
-var Queue = require('../src/Queue.js');
+var Queue = require('../src/ArrayQueue.js');
 var lib = require('./lib.js');
 var assert = lib.assert;
 
