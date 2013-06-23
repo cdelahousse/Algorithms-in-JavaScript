@@ -187,7 +187,7 @@ function BinaryHeap() {
    * @public
    * @returns {boolean}
    */
-  this.empty = function () {
+  this.isEmpty = function () {
     return n === 0;
   };
 

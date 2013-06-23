@@ -26,7 +26,7 @@ assert(s.size(), mid);
 
 assert(s.pop(), 2*(j-1));
 
-while (!s.empty()) {
+while (!s.isEmpty()) {
   s.pop()
 }
 

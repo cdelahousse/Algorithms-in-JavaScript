@@ -20,7 +20,7 @@ function ArrayQueue() {
 		j = 0;
 	}
 
-	this.empty = function() {
+	this.isEmpty = function() {
 		return n === 0;
 	};
 

@@ -28,7 +28,7 @@ a.splice(minIndex, 1);
 
 //If this is a real heap, all it's elems should be sorted when removed
 var shouldBeSorted = [];
-while ( !b.empty() ) {
+while ( !b.isEmpty() ) {
   shouldBeSorted.push(b.remove());
 }
 
