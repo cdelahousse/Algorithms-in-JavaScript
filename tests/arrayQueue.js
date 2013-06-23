@@ -6,7 +6,7 @@ var assert = lib.assert;
 var q = new Queue();
 
 //Some test vals
-var size = 6;
+var size = 1000;
 var start = 2*1;
 var endVal = 'a';
 
