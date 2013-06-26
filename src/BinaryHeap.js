@@ -1,5 +1,7 @@
 var swap = require('./lib.js').swap;
 
+/** @TODO Currently a minHeap for numbers. Implement a comparator.
+
 /**
  * Implicit Binary Heap implemented using Eytzinger's method.
  * Please see Open Data Structures ch10 for more details
