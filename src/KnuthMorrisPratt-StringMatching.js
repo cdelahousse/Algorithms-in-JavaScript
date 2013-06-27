@@ -1,6 +1,8 @@
 ﻿
 //Knuth Morris Pratt string matching
 function kmp(text,pattern) {
+  'use strict';
+  
 	var tlen = text.length,
 			plen = pattern.length,
 			m = 0,//Beginning of current match
@@ -18,7 +20,7 @@ function kmp(text,pattern) {
 		var pos = 2; //Start at pos 2 of table because pos 0,1 are equal to -1,0
 
 		while (pos < plen) {
-			if (pattern[pos - 1] == pattern[cnd]) {
+			if (pattern[pos - 1] === pattern[cnd]) {
 				cnd++;
 				table[pos] = cnd;
 				pos++;
@@ -32,13 +34,13 @@ function kmp(text,pattern) {
 			}
 		}
 
-			return table;
+    return table;
 	})();
 
 
 	while (m+i < tlen) {
 		if (text[m+i] === pattern[i]) { //pattern/text Character match
-			if (i ==  plen - 1) { //End of pattern reached
+			if (i ===  plen - 1) { //End of pattern reached
 				return m;
 			}
 			else {

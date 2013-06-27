@@ -4,6 +4,8 @@
  * http://opendatastructures.org/ods-java/2_3_ArrayQueue_Array_Based_.html
  */
 function ArrayQueue() {
+  'use strict';
+
   var a = [],
       n = 0,
       j = 0;

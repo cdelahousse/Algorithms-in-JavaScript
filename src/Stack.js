@@ -4,6 +4,8 @@
  * @constructor
  */
 function Stack() {
+  'use strict';
+
 	var a = [],
 			n = 0;
 

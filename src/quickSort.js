@@ -6,11 +6,14 @@ var swap = require('./lib.js').swap;
  * @returns new sorted array
  */
 function quickSortArray(unsorted_array) {
+  'use strict';
+
   var len = unsorted_array.length;
 
   /** Base case */
   if (len <= 1) {
-    return unsorted_array; }
+    return unsorted_array;
+  }
 
   var mid,
       left = [],
@@ -40,6 +43,7 @@ function quickSortArray(unsorted_array) {
  * @param {array} unsorted_array
  */
 function quickSortInPlaceRecursive(unsorted_array) {
+  'use strict';
 
   /** Recursive function */
   function qs (a, left_index, right_index) { 

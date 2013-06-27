@@ -13,6 +13,8 @@
  * @param {array} collection unsorted
  */
 function gnomeSort (collection) {
+  'use strict';
+
   var len = collection.length,
       i=0;
 

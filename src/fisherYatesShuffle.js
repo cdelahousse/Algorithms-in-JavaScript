@@ -4,9 +4,11 @@ var swap = require('./lib.js').swap;
  * @param {array} collection
  */
 function shuffle (collection) {
+  'use strict';
 
   var len = collection.length,
-      pos;
+      pos,
+      i;
 
   for (i = len - 1; i > 0; i--) {
     pos = Math.floor(Math.random() * (i + 1)); //Between 0 and i

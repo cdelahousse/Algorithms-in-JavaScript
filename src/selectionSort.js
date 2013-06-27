@@ -10,6 +10,7 @@
  */
 
 function selectionSort(collection) {
+  'use strict';
 
   var len = collection.length,
       i,j,key;

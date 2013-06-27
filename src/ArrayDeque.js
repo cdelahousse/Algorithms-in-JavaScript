@@ -6,6 +6,8 @@ var IndexOutOfBoundsException = require('./lib.js').IndexOutOfBoundsException;
  * http://opendatastructures.org/ods-java/2_4_ArrayDeque_Fast_Deque_O.html
  */
 function ArrayDeque() {
+  'use strict';
+
       /** Backing array */
   var a = [],
 

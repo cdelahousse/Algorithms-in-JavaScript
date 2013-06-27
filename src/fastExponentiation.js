@@ -7,6 +7,9 @@
  * @returns {number}
  */
 function fastExp(base,power) {
+
+  'use strict';
+
   function sqr(a) {return a*a;}
   return (power === 0) ? 1 :
     ((power & 1) === 0) ?

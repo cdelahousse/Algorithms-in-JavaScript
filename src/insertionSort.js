@@ -1,6 +1,8 @@
 ﻿var swap = require('./lib.js').swap;
 
 function insertionSort (collection) {
+  'use strict';
+
   var len = collection.length,
       key;
 
@@ -20,6 +22,8 @@ function insertionSort (collection) {
 }
 
 function insertionSort2 (collection) {
+  'use strict';
+
   var len = collection.length,
       i,j;
 

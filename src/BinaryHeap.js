@@ -8,6 +8,7 @@ var swap = require('./lib.js').swap;
  * @constructor
  */
 function BinaryHeap() {
+  'use strict';
 
       /** Backing array */
   var a = [],
@@ -121,7 +122,7 @@ function BinaryHeap() {
    * @returns {object}
    */
   this.peek = function() {
-    return remove(); 
+    return this.remove(); 
   };
 
   /**
@@ -134,7 +135,7 @@ function BinaryHeap() {
     a[0] = a.pop();
     trickleDown(0);
     n--;
-    // if (3*n < a.length) resize();
+    // if (3*n < a.length) resize(); //Uneeded
     return x;
   };
 
