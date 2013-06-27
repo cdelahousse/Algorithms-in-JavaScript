@@ -1,3 +1,4 @@
+'use strict';
 
 var BinaryHeap = require('../src/BinaryHeap.js');
 var lib = require('./lib.js');

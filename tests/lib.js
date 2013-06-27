@@ -1,4 +1,5 @@
 /** @fileOverview Helpers for testing */
+'use strict';
 
 var _ = require('underscore');
 

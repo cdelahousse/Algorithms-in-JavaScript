@@ -1,3 +1,5 @@
+'use strict';
+
 var shuffle = require('../src/fisherYatesShuffle.js');
 
 var lib = require('./lib.js');

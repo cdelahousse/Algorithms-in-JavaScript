@@ -1,4 +1,6 @@
 
+'use strict';
+
 var Stack = require('../src/Stack.js');
 var lib = require('./lib.js');
 var assert = lib.assert;
@@ -27,7 +29,7 @@ assert(s.size(), mid);
 assert(s.pop(), 2*(j-1));
 
 while (!s.isEmpty()) {
-  s.pop()
+  s.pop();
 }
 
 assert(s.size(), 0);
