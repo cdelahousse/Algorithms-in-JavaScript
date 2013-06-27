@@ -1,6 +1,6 @@
 var swap = require('./lib.js').swap;
 
-/** 
+/**
  * Quicksort using new arrays for the partion step
  * @params {array} unsorted_array
  * @returns new sorted array
@@ -46,15 +46,15 @@ function quickSortInPlaceRecursive(unsorted_array) {
   'use strict';
 
   /** Recursive function */
-  function qs (a, left_index, right_index) { 
+  function qs (a, left_index, right_index) {
     /** Base case. Subset has 1 or less elements. */
-    if (left_index >= right_index) return; 
+    if (left_index >= right_index) return;
 
     /** Pivot element Location */
     var pivot = Math.floor((left_index + right_index)/2);
 
     /** Move pivot element to leftmost location */
-    swap(a, left_index, pivot); 
+    swap(a, left_index, pivot);
 
     /** Index of leftmost element larger than pivot element */
     var leftMostLarger = left_index;
@@ -62,10 +62,10 @@ function quickSortInPlaceRecursive(unsorted_array) {
     /** Partition array */
     for (var i = left_index + 1; i <= right_index; i++) {
 
-      /** 
+      /**
        * When current elem is smaller than pivot elem, swap it with rightmost
        * larger elem so that the current elem moves left to be the rightmost
-       * smaller elem. 
+       * smaller elem.
        */
       if (a[left_index] > a[i]) {
         leftMostLarger = ++leftMostLarger;
@@ -74,11 +74,11 @@ function quickSortInPlaceRecursive(unsorted_array) {
     }
 
     /** Swap pivot elem with leftmost larger elem */
-    swap(a,left_index,leftMostLarger); 
+    swap(a,left_index,leftMostLarger);
 
     /** Recur on separate partitions */
-    qs(a,left_index,leftMostLarger-1); 
-    qs(a,leftMostLarger+1,right_index); 
+    qs(a,left_index,leftMostLarger-1);
+    qs(a,leftMostLarger+1,right_index);
   }
 
   /** Start Recuring on the entire array */
@@ -86,7 +86,7 @@ function quickSortInPlaceRecursive(unsorted_array) {
 }
 
 /** Export to global scope */
-if (module && module.exports) { 
-  module.exports.quickSortArray = quickSortArray; 
+if (module && module.exports) {
+  module.exports.quickSortArray = quickSortArray;
   module.exports.quickSortInPlaceRecursive = quickSortInPlaceRecursive;
 }

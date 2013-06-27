@@ -3,11 +3,11 @@
 /**
  * In place Gnome sort as defined here http://dickgrune.com/Programs/gnomesort.html
  *
- * 1. if pair at indices i - 1 and i are in order, examine next pair (increment i index) 
- * 2. if pair not in order, swap and examine previous pair (decrement index) 
+ * 1. if pair at indices i - 1 and i are in order, examine next pair (increment i index)
+ * 2. if pair not in order, swap and examine previous pair (decrement index)
  *
  * Boundry cases:
- *  1. If at left most element, increment index.  
+ *  1. If at left most element, increment index.
  *  2. If at right most index, stop.
  *
  * @param {array} collection unsorted
@@ -27,6 +27,6 @@ function gnomeSort (collection) {
       i--;
     }
   }
-} 
+}
 
 if (module && module.exports) module.exports = gnomeSort;

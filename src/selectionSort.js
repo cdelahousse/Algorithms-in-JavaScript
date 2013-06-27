@@ -22,12 +22,12 @@ function selectionSort(collection) {
     /** Find smallest in unsorted portion */
     for (j = i + 1; j < len; j++) {
       if (collection[key] > collection[j]) {
-        key = j; 
+        key = j;
       }
-    } 
+    }
 
     swap(collection,i,key);
-  } 
+  }
   return collection;
 }
 

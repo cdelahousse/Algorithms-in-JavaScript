@@ -1,6 +1,6 @@
 
 //Creates a new object that inherits from 'target' and adds properties
-//from 'prop'. 
+//from 'prop'.
 //Similar to native JS Object.create
 //http://javascript.crockford.com/prototypal.html
 module.exports.extend = function extend (target,props) {
@@ -21,7 +21,7 @@ module.exports.extend = function extend (target,props) {
 	return new F(props);
 };
 
-//Swaps two of an enumerable object's elements (ie. arrays) 
+//Swaps two of an enumerable object's elements (ie. arrays)
 module.exports.swap = function swap(object,i,j) {
   'use strict';
 

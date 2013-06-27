@@ -2,7 +2,7 @@
 //Knuth Morris Pratt string matching
 function kmp(text,pattern) {
   'use strict';
-  
+
 	var tlen = text.length,
 			plen = pattern.length,
 			m = 0,//Beginning of current match
@@ -48,15 +48,15 @@ function kmp(text,pattern) {
 			}
 		}
 		else { //Char match fail
-			//Where to start search from . m + index of chars matched - prefix offset 
+			//Where to start search from . m + index of chars matched - prefix offset
 			//If i == 0, then pfxtbl[0] == -1, and m = m + 0 -(-1) == m + 1 -> next char
 			//if i == 1, then pfxtbl[1] == 0, and m = m + 1 - 0 == m + 1 -> next char
-			//if i > 1, then pfxtbl[i] is an offset. 
-			m = m + i - partialMatchTable[i]; 
-			
-			if (partialMatchTable[i] > -1 ) { 
+			//if i > 1, then pfxtbl[i] is an offset.
+			m = m + i - partialMatchTable[i];
+
+			if (partialMatchTable[i] > -1 ) {
 				//Start from offset (m + i where i >= 0)
-				i = partialMatchTable[i]; 
+				i = partialMatchTable[i];
 			}
 			else {//prfxTbl == -1 means failed on 1st char of pattern
 				i = 0;

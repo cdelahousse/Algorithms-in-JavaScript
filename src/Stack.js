@@ -1,4 +1,4 @@
-/** 
+/**
  * A stack data structure with an API similar to the Java Stack interface
  * This data structure is just a facade for the array object
  * @constructor
@@ -36,4 +36,4 @@ function Stack() {
 
 }
 
-if (module && module.exports) module.exports = Stack; 
+if (module && module.exports) module.exports = Stack;

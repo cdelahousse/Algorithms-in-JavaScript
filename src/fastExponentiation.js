@@ -1,4 +1,4 @@
-/** 
+/**
  * Fast Exponentiation algorithm. Relies on the principle that
  * a^n = (a^(n/2))^2
  *
@@ -18,4 +18,4 @@ function fastExp(base,power) {
 }
 
 /** Export to global scope */
-if (module && module.exports) module.exports = fastExp; 
+if (module && module.exports) module.exports = fastExp;

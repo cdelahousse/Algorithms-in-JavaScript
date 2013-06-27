@@ -3,7 +3,7 @@
 var shuffle = require('../src/fisherYatesShuffle.js');
 
 var lib = require('./lib.js');
-var assert = lib.assert; 
+var assert = lib.assert;
 
 var sortedCollection = lib.sortedCollection();
 var sortedCollection2 = lib.sortedCollection();

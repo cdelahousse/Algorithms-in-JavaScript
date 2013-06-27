@@ -56,7 +56,7 @@ function ArrayDeque() {
   /**
    * Set the value of the elem at index i.
    * @param {number} i The index of the value returnd
-   * @param x The value of the elem to set 
+   * @param x The value of the elem to set
    * @returns The previous value at index i;
    * @throws {IndexOutOfBoundsException}
    * @public
@@ -72,7 +72,7 @@ function ArrayDeque() {
 
   /** @TODO document optional args */
   /**
-   * Insert an element at index i; 
+   * Insert an element at index i;
    * @param {number} i The index of inserted value. Can be +1 more than size().
    * @throws {IndexOutOfBoundsException}
    * @public
@@ -84,7 +84,7 @@ function ArrayDeque() {
 
       x = i;
       /** Index to add is at end */
-      i = n; 
+      i = n;
     }
 
     if (i < 0 || i > n ) throw new IndexOutOfBoundsException();
@@ -95,11 +95,11 @@ function ArrayDeque() {
 
     /** Shift elements left */
     if ( i < Math.floor(n / 2)) {
-      /** 
-       * New first elem index. j-1 mod a.length. 
+      /**
+       * New first elem index. j-1 mod a.length.
        * Explicit here b/c modulo implementation in JS is not correct
        */
-      j = ( j === 0 ) ? len - 1 : j - 1; 
+      j = ( j === 0 ) ? len - 1 : j - 1;
 
       for (k = 0; k <= i-1; k++) {
         a[ (j + k) % len ] = a[ (j + k + 1)  % len];
@@ -119,8 +119,8 @@ function ArrayDeque() {
 
   /**
    * Remove the element at index i and return it's value.
-   * @param {number} [i=size()] The index of the value removed 
-   * @returns The value of the removed element 
+   * @param {number} [i=size()] The index of the value removed
+   * @returns The value of the removed element
    * @throws {IndexOutOfBoundsException}
    * @public
    */
@@ -152,9 +152,9 @@ function ArrayDeque() {
     n--;
     if (n <= 3*n) resize();
 
-    return x; 
+    return x;
   };
-  
+
 
   this.clear = function() {
     n = 0;

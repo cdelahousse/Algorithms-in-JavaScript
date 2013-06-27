@@ -16,9 +16,9 @@ function BinaryHeap() {
       /** Number of elements  */
       n = 0;
 
-  /** 
+  /**
    * Resize the array
-   * Note: this isn't really needed for JS. 
+   * Note: this isn't really needed for JS.
    */
   // function resize() {
     // var b = new Array( Math.max(1, n*2) ),
@@ -62,7 +62,7 @@ function BinaryHeap() {
   }
 
   /**
-   * Get size of heap 
+   * Get size of heap
    * @returns {integer}
    * @public
    */
@@ -71,7 +71,7 @@ function BinaryHeap() {
   };
 
   /**
-   * Get size of heap 
+   * Get size of heap
    * @returns {integer}
    * @public
    */
@@ -85,7 +85,7 @@ function BinaryHeap() {
    * @public
    */
   this.add = function(x) {
-    // if (n + 1 > a.length ) resize(); 
+    // if (n + 1 > a.length ) resize();
     // a[n] = x;
     a.push(x);
     bubbleUp(n);
@@ -122,7 +122,7 @@ function BinaryHeap() {
    * @returns {object}
    */
   this.peek = function() {
-    return this.remove(); 
+    return this.remove();
   };
 
   /**
@@ -196,5 +196,5 @@ function BinaryHeap() {
 
 }
 
-if (module && module.exports) module.exports = BinaryHeap; 
+if (module && module.exports) module.exports = BinaryHeap;
 

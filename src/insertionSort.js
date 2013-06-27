@@ -37,7 +37,7 @@ function insertionSort2 (collection) {
   return collection;
 }
 
-if (module && module.exports) { 
-  module.exports.insertionSort = insertionSort; 
+if (module && module.exports) {
+  module.exports.insertionSort = insertionSort;
   module.exports.insertionSort2 = insertionSort2;
 }

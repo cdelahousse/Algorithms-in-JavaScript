@@ -65,7 +65,7 @@ function ArrayQueue() {
 
     if (n <= 3*n) resize();
 
-    return x; 
+    return x;
   };
 
   this.poll = function() {

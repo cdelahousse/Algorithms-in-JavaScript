@@ -13,14 +13,14 @@ var lib = {};
 lib.assert = (function() {
   var counter = 0;
 
-   /** 
+   /**
     * Test to see if the first argument matches the value of the second.
     * @param computed The computed value
     * @param expected The expected value
     * @returns {boolean}
     */
   return function (computed, expected) {
-    return _.isEqual(computed, expected) ? 
+    return _.isEqual(computed, expected) ?
       (console.log( ++counter + ") PASS"), true) :
       (console.log( ++counter + ") FAIL: " + computed + ", expected: " + expected), false);
   };
