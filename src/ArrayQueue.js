@@ -1,3 +1,5 @@
+var NoSuchElementException = require('./lib').NoSuchElementException;
+
 /**
  * Implementing something similar to the Java Queue interface using an array.
  * See Open Data Structures
@@ -6,10 +8,16 @@
 function ArrayQueue() {
   'use strict';
 
+      /** Array used to store the elements */
   var a = [],
+      /** Number of elements in the queue */
       n = 0,
+      /** Index in the array of the Queue's next value to dequeue */
       j = 0;
 
+  /**
+   * Grow the internal array 
+   */
   function resize() {
     var b = new Array( Math.max(1, n*2) ),
         k;
@@ -21,6 +29,32 @@ function ArrayQueue() {
     a = b;
     j = 0;
   }
+
+  /**
+   * Return an iterator for the elemets of the queue
+   */
+  this.iterator = function () {
+    var that = this;
+
+    /** Closure for unique iterator instances */
+    return (function () {
+      var k = 0;
+      return {
+        hasNext : function () {
+          return k < n;
+        },
+        next : function () {
+          if (that.isEmpty() || k >= n ) throw new NoSuchElementException();
+          var x = a[ ( j + k ) % a.length ];
+          k++;
+          return x;
+        },
+        remove : function () {
+          throw new Error('To Implement');
+        }
+      };
+    })();
+  };
 
   this.isEmpty = function() {
     return n === 0;
