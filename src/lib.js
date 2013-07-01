@@ -34,3 +34,8 @@ module.exports.IndexOutOfBoundsException = function (msg){
   'use strict';
   return new Error(msg);
 };
+
+module.exports.NoSuchElementException = function (msg){
+  'use strict';
+  return new Error(msg);
+};
