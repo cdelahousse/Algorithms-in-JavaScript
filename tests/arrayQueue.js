@@ -79,7 +79,14 @@ assert(iter.next(), 2*n);
 assert(iter.hasNext(),false);
 
 try {
- console.log( iter.next());
+ iter.next();
 } catch (e) {
   assert(true, true);
 }
+
+
+//Test to see if iterators are independent
+var iter2 = q2.iterator();
+assert(iter2.hasNext(), true);
+
+
