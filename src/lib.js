@@ -51,7 +51,7 @@ module.exports.DefaultComparator = {
     if ( lhs > rhs ) return 1;
     else if ( lhs < rhs ) return -1;
     else if ( lhs === rhs ) return 0;
-    // else throw new Error();
+    else throw new Error();
   },
   equals : function (lhs, rhs) {  'use strict'; return lhs === rhs; }
 };

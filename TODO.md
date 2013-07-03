@@ -21,7 +21,6 @@
 ## Binary Heap
 * Implement Iterator
 * Wikipedia has better trickle down algo
-* Undefined on trickle down bug
 
 ## ArrayDeque
 * Implement addAll() and removeAll() efficiently 

@@ -121,8 +121,8 @@ function BinaryHeap(comparator) {
   this.remove = function() {
     var x = a[0];
     a[0] = a.pop();
-    trickleDown(0);
     n--;
+    trickleDown(0);
     return x;
   };
 
