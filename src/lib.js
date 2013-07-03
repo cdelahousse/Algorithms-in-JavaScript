@@ -45,6 +45,13 @@ module.exports.NoSuchElementException = function (msg){
  * returns {number}
  */
 module.exports.DefaultComparator = {
-  compare : function (lhs, rhs) { 'use strict'; return lhs - rhs; },
+  compare : function (lhs, rhs) {
+    'use strict';
+
+    if ( lhs > rhs ) return 1;
+    else if ( lhs < rhs ) return -1;
+    else if ( lhs === rhs ) return 0;
+    // else throw new Error();
+  },
   equals : function (lhs, rhs) {  'use strict'; return lhs === rhs; }
 };
