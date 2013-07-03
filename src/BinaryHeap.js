@@ -17,21 +17,6 @@ function BinaryHeap() {
       n = 0;
 
   /**
-   * Resize the array
-   * Note: this isn't really needed for JS.
-   */
-  // function resize() {
-    // var b = new Array( Math.max(1, n*2) ),
-        // i;
-
-    // for (i = 0; i < n; i++) {
-      // b[i] = a[i];
-    // }
-
-    // a = b;
-  // }
-
-  /**
    * Get index of left child of value at index i
    * @param {integer} i
    * @returns {integer}
@@ -85,8 +70,6 @@ function BinaryHeap() {
    * @public
    */
   this.add = function(x) {
-    // if (n + 1 > a.length ) resize();
-    // a[n] = x;
     a.push(x);
     bubbleUp(n);
     n++;
@@ -135,7 +118,6 @@ function BinaryHeap() {
     a[0] = a.pop();
     trickleDown(0);
     n--;
-    // if (3*n < a.length) resize(); //Uneeded
     return x;
   };
 
