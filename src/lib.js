@@ -39,3 +39,12 @@ module.exports.NoSuchElementException = function (msg){
   'use strict';
   return new Error(msg);
 };
+
+/**
+ * Default  comparator. 
+ * returns {number}
+ */
+module.exports.DefaultComparator = {
+  compare : function (lhs, rhs) { 'use strict'; return lhs - rhs; },
+  equals : function (lhs, rhs) {  'use strict'; return lhs === rhs; }
+};
