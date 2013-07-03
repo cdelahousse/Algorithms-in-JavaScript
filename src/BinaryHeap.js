@@ -1,20 +1,25 @@
 var swap = require('./lib.js').swap;
+var DefaultComparator = require('./lib.js').DefaultComparator;
 
 /** @TODO Currently a minHeap for numbers. Implement a comparator.
 
 /**
- * Implicit Binary Heap implemented using Eytzinger's method.
- * Please see Open Data Structures ch10 for more details
+ * Priority queue implemented as an implicit Binary Heap using Eytzinger's
+ * method. Please see Open Data Structures ch10 for more details.
+ * @param {function} [comparator] To distiguish the relative ordering of elements
  * @constructor
  */
-function BinaryHeap() {
+function BinaryHeap(comparator) {
   'use strict';
 
       /** Backing array */
   var a = [],
 
       /** Number of elements  */
-      n = 0;
+      n = 0,
+
+      /** Comparator */
+      c = comparator || DefaultComparator;
 
   /**
    * Get index of left child of value at index i
@@ -83,7 +88,7 @@ function BinaryHeap() {
    */
   function bubbleUp(i) {
     var p = parent(i);
-    while (i > 0 && a[p] > a[i]) {
+    while ( i > 0 && c.compare(a[i], a[p]) < 0 ) {
       swap(a, p, i);
       i = p;
       p = parent(p);
@@ -104,7 +109,7 @@ function BinaryHeap() {
    * @public
    * @returns {object}
    */
-  this.peek = function() {
+  this.poll = function() {
     return this.remove();
   };
 
@@ -133,10 +138,10 @@ function BinaryHeap() {
       j = -1;
       r = right(i);
 
-      if (r < n && a[r] < a[i] ) {
+      if (r < n && c.compare(a[r], a[i]) < 0 ) {
         l = left(i);
 
-        if ( a[l] < a[r] ) {
+        if ( c.compare(a[l], a[r]) < 0 ) {
           j = l;
         } else {
           j = r;
@@ -144,7 +149,7 @@ function BinaryHeap() {
 
       } else {
         l = left(i);
-        if ( l < n && a[l] < a[i] ) {
+        if ( l < n && c.compare(a[l], a[i]) < 0 ) {
           j = l;
         }
       }
